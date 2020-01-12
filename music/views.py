@@ -23,6 +23,15 @@ class AlbumCreate(CreateView):
     fields = ['artist','album_title','genre','album_logo']
 
 
+class AlbumUpdate(UpdateView):
+    model = Album
+    fields = ['artist','album_title','genre','album_logo']
+
+
+class AlbumDelete(DeleteView):
+    model = Album
+    success_url = reverse_lazy('music:index')
+
 # def index(request):
 
 #     all_albums=Album.objects.all()
